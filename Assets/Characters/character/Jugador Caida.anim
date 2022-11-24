@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Jugador
+  m_Name: Jugador Caida
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1868525606, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
+      value: {fileID: -979836604, guid: c89d351b1d0d10f45b1bca4984523977, type: 3}
     - time: 0.14285715
-      value: {fileID: 2066187550, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
-    - time: 0.2857143
-      value: {fileID: 878166382, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
-    - time: 0.42857143
-      value: {fileID: 1155346783, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
+      value: {fileID: 1694734967, guid: c89d351b1d0d10f45b1bca4984523977, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -47,21 +43,19 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 1868525606, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
-    - {fileID: 2066187550, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
-    - {fileID: 878166382, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
-    - {fileID: 1155346783, guid: 9a914d3b42d47cf41a1b5caa2357281a, type: 3}
+    - {fileID: -979836604, guid: c89d351b1d0d10f45b1bca4984523977, type: 3}
+    - {fileID: 1694734967, guid: c89d351b1d0d10f45b1bca4984523977, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5714286
+    m_StopTime: 0.2857143
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

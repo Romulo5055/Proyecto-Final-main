@@ -15,6 +15,20 @@ public class MovimientoPersonaje : MonoBehaviour
     private float dirX = 0f;
     [SerializeField] private float movespeed = 7f;
     [SerializeField] private float jumpforce = 14f;
+
+    public Transform Check;
+    public float RadioCheck;
+    public bool TocandoPiso;
+    public LayerMask QueesPiso;
+
+
+    private enum MovementState
+    {
+        idle, running, jumping, falling
+    }
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,28 +45,44 @@ public class MovimientoPersonaje : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX *movespeed, rb.velocity.y);
 
-        if (Input.GetKeyDown("w")) { 
+        if (Input.GetKeyDown("w") && TocandoPiso == true) { 
+            
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            
         }
         UpdateAnimationUpdate();
+
+        TocandoPiso = Physics2D.OverlapCircle(Check.position,RadioCheck,QueesPiso);
 
     }
     private void UpdateAnimationUpdate()
     {
-               if(dirX > 0f)
+        MovementState state;
+
+        if(dirX > 0f)
         {
-            anim.SetBool("Running", true);
+            state = MovementState.running;
             sprite.flipX = false;
         }
         else if (dirX < 0f)
         {
-            anim.SetBool("Running" , true);
+            state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("Running", false);
+            state = MovementState.idle; ;
         }
+
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+        anim.SetInteger("state", (int)state);
 
     }
  // private bool IsGrounded() 
